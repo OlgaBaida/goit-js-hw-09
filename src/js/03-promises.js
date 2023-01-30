@@ -9,7 +9,7 @@ form.addEventListener('submit', submitCreatePromises);
 
 function submitCreatePromises(e) {
   e.preventDefault();
-
+  
   let delay = firstDelayMs.valueAsNumber;
   const delayStepMsVal = delayStepMs.valueAsNumber;
   const amountVal = amount.valueAsNumber;
@@ -28,8 +28,8 @@ function submitCreatePromises(e) {
       });
     delay += delayStepMsVal;
   }
+  e.target.reset(); 
 }
-
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
